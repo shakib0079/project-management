@@ -1,19 +1,29 @@
-import Form from "./components/Form"
-// import Home from "./components/Home"
+/* eslint-disable no-undef */
+// import Form from "./components/Form"
+import Home from "./components/Home"
+import { useState } from "react"
+import ProjectDetails from "./components/ProjectDetails"
 import Sidebar from "./components/Sidebar"
+import { ProjectContextProvier } from "./context/ProjectContext"
 
 
 function App() {
 
+  const [projects, setProjects] = useState({});
+
+  const addProject = () => {
+
+  }
+
   return (
-    <>
+    <ProjectContextProvier value={{projects, addProject, deleteProject, addTasks, deleteTasks}}>
       <div className="h-screen flex gap-6 items-center">
-        <Sidebar />
-        <div className="border border-red-500 h-3/4 w-3/4">
-          <Form />
+        <Sidebar projects={projects}/>
+        <div className="h-3/4 w-3/4">
+          <Home />
         </div>
       </div>
-    </>
+    </ProjectContextProvier>
   )
 }
 

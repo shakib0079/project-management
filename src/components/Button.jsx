@@ -1,8 +1,12 @@
 /* eslint-disable react/prop-types */
 
 
-export default function Button({children,onBtnChange, color="slate"}) {
+
+
+export default function Button({children,onBtnChange}) {
+
+
   return (
-    <button className={`text-white text-sm py-1 px-4 bg-slate-800 hover:bg-slate-500 font-normal font-['Roboto'] capitalize rounded-sm flex items-center justify-center`} onClick={onBtnChange}>{children}</button>
+    <button className="hover:shadow-form rounded-md bg-[#6A64F1] py-3 px-8 text-center text-base font-semibold text-white outline-none" onClick={onBtnChange}>{children}</button>
   )
 }

@@ -1,8 +1,9 @@
+/* eslint-disable react/prop-types */
 
 import Button from "./Button";
 import ProjectList from "./ProjectList";
 
-export default function Sidebar() {
+export default function Sidebar({projects}) {
   return (
     <div className="w-1/4 h-3/4 bg-stone-950 flex items-center flex-col rounded-r-lg">
         <div className="w-full flex flex-col mt-8 gap-6">
@@ -11,9 +12,7 @@ export default function Sidebar() {
                 <Button onBtnChange>+Add Project</Button>
             </div>
             <div>
-                <ProjectList />
-                <ProjectList />
-                <ProjectList />
+                {projects.lenght > 0 ? <ProjectList projects={projects}/> : ""}
             </div>
         </div>
     </div>
